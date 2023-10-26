@@ -22,6 +22,17 @@
     p{
         @apply text-sm font-light ;
     }
+    form{
+        @apply rounded-xl p-4;
+    }
+    label{
+        @apply mt-4;
+    }
+    input,
+    select,
+    textarea{
+        @apply m-1 bg-nav  p-1 outline-none rounded box-border; 
+    }
 }
 @layer components{
     .icon{

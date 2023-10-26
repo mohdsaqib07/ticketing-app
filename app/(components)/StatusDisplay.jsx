@@ -1,9 +1,9 @@
 import React from 'react'
 
-const StatusDisplay = () => {
+const StatusDisplay = ({status}) => {
   return (
-    <span className='inline-block rounded-full px-2 py-1 text-md font-black text-white bg-blue-700'>
-       Done
+    <span className='inline-block rounded-full px-2 py-1 text-sm font-black text-white bg-blue-700 capitalize'>
+       {status}
     </span>
   )
 }
