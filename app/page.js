@@ -19,7 +19,7 @@ const getData=async ()=> {
 }
 export default async function Dashboard(){
   const {tickets} = await getData();
-  console.log(tickets)
+
   const uniqueCategories = [...new Set(tickets?.map(({ category }) => category))];
   
 

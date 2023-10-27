@@ -17,8 +17,7 @@ export async function POST(req) {
 export async function GET(req){
      try{
           const tickets = await Ticket.find()
-          console.log(tickets)
-          console.log("Total number of tickets are : ",tickets.length)
+        
           return NextResponse.json({"tickets":tickets})
 
        
