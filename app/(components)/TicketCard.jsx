@@ -3,10 +3,11 @@ import DeleteBlock from "./DeleteBlock";
 import PriorityDisplay from "./PriorityDisplay";
 import ProgressDisplay from "./ProgressDisplay";
 import StatusDisplay from "./StatusDisplay";
-
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 const TicketCard = ({ticket,id}) => {
   return (
     <div className="flex flex-col bg-slate-950 hover:bg-red-50 rounded-md shadow-lg p-3 m-2 transition-colors duration-200 group">
+     
       <div className="flex mb-3">
         <PriorityDisplay priority={ticket.priority} />
         <div className="ml-auto">
@@ -21,7 +22,7 @@ const TicketCard = ({ticket,id}) => {
       <div className="flex-grow"></div>
       <div className="flex mt-2">
         <div className="flex flex-col">
-          <p className="text-xs my-1 group-hover:text-black">{new Date(ticket.createdAt).toDateString()}</p>
+          <p className="text-xs my-1 group-hover:text-black">{formatRelative(new Date(ticket.createdAt), new Date(ticket.createdAt))}</p>
           <ProgressDisplay progress={ticket.progress} />
         </div>
         <div className='ml-auto flex items-end'>

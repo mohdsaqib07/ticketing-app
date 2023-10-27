@@ -16,15 +16,12 @@ export async function POST(req) {
 
 export async function GET(req){
      try{
-        Ticket.find({}).then(function(tickets){
+          const tickets = await Ticket.find()
           console.log(tickets)
           console.log("Total number of tickets are : ",tickets.length)
-          return NextResponse.json({tickets:tickets},{status:200})
+          return NextResponse.json({"tickets":tickets})
 
-        }).catch(function(err) {
-          console.log(err.message)
-          return NextResponse.json({ message: "Error", err }, { status: 500 })
-        });
+       
      }catch(err){
           return NextResponse.json({ message: "Error", err }, { status: 500 });
      }
